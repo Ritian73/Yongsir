@@ -1,2 +1,0 @@
-# Yongsir
-FUCK
