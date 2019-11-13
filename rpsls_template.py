@@ -1,110 +1,86 @@
 #coding:gbk
 """
-µÚÒ»¸öĞ¡ÏîÄ¿£ºRock-paper-scissors-lizard-Spock
-×÷Õß£º
-ÈÕÆÚ£º
+ç¬¬ä¸€ä¸ªå°é¡¹ç›®ï¼šRock-paper-scissors-lizard-Spock
+ä½œè€…ï¼šé›è…¾
+æ—¥æœŸï¼š2019/11/14
 """
-
-import random
-
-
-
-# 0 - Ê¯Í·
-# 1 - Ê·²¨¿Ë
-# 2 - Ö½
-# 3 - òáòæ
-# 4 - ¼ôµ¶
-
-# ÒÔÏÂÎªÍê³ÉÓÎÏ·ËùĞèÒªÓÃµ½µÄ×Ô¶¨Òåº¯Êı
-
+improt random
+# 0 - çŸ³å¤´
+# 1 - å²æ³¢å…‹
+# 2 - çº¸
+# 3 - èœ¥èœ´
+# 4 - å‰ªåˆ€
 def name_to_number(name):
     """
-    ½«ÓÎÏ·¶ÔÏó¶ÔÓ¦µ½²»Í¬µÄÕûÊı
+    å°†æ¸¸æˆå¯¹è±¡å¯¹åº”åˆ°ä¸åŒçš„æ•´æ•°
     """
-    if name=="Ê¯Í·":
+    if name=="çŸ³å¤´":
 	    num=0
-    elif name=="Ê·²¨¿Ë":
+    elif name=="å²æ³¢å…‹":
 	    num=1
-    elif name=="Ö½":
+    elif name=="çº¸":
 	    num=2
-    elif name=="òáòæ":
+    elif name=="èœ¥èœ´":
 	    num=3
-    elif name=="¼ôµ¶":
+    elif name=="å‰ªåˆ€":
 	    num=4
     else:
 	    print("Error: No Correct Name")
     return num
-#±àĞ´Ö´ĞĞ´úÂë,´úÂëÍê³Éºó½«passÉ¾³ı
-
-
 def number_to_name(number):
     """
-    ½«ÕûÊı (0, 1, 2, 3, or 4)¶ÔÓ¦µ½ÓÎÏ·µÄ²»Í¬¶ÔÏó
+    å°†æ•´æ•° (0, 1, 2, 3, or 4)å¯¹åº”åˆ°æ¸¸æˆçš„ä¸åŒå¯¹è±¡
     """
     if number==0:
-        comp_name="Ê¯Í·"	
+        comp_name="çŸ³å¤´"	
     elif number==1:
-        comp_name="Ê·²¨¿Ë"	
+        comp_name="å²æ³¢å…‹"	
     elif number==2:
-        comp_name="Ö½"
+        comp_name="çº¸"
     elif number==3:
-        comp_name="òáòæ"
+        comp_name="èœ¥èœ´"
     else:
-        comp_name="¼ôµ¶"
+        comp_name="å‰ªåˆ€"
     return comp_name
- #±àĞ´Ö´ĞĞ´úÂë,´úÂëÍê³Éºó½«passÉ¾³ı
-
-
 def rpsls(player_choice):
     """
-    ÓÃ»§Íæ¼ÒÈÎÒâ¸ø³öÒ»¸öÑ¡Ôñ£¬¸ù¾İRPSLSÓÎÏ·¹æÔò£¬ÔÚÆÁÄ»ÉÏÊä³ö¶ÔÓ¦µÄ½á¹û
+    ç”¨æˆ·ç©å®¶ä»»æ„ç»™å‡ºä¸€ä¸ªé€‰æ‹©ï¼Œæ ¹æ®RPSLSæ¸¸æˆè§„åˆ™ï¼Œåœ¨å±å¹•ä¸Šè¾“å‡ºå¯¹åº”çš„ç»“æœ
 
     """
-
-
-    print("--------")# Êä³ö"-------- "½øĞĞ·Ö¸î
-    player_choice=choice_name# ÏÔÊ¾ÓÃ»§ÊäÈëÌáÊ¾£¬ÓÃ»§Í¨¹ı¼üÅÌ½«×Ô¼ºµÄÓÎÏ·Ñ¡Ôñ¶ÔÏóÊäÈë£¬´æÈë±äÁ¿player_choice
-
-    player_choice_number=name_to_number(player_choice)# µ÷ÓÃname_to_number()º¯Êı½«ÓÃ»§µÄÓÎÏ·Ñ¡Ôñ¶ÔÏó×ª»»ÎªÏàÓ¦µÄÕûÊı£¬´æÈë±äÁ¿player_choice_number
-
-    comp_number=random.randrange(0,5)# ÀûÓÃrandom.randrange()×Ô¶¯²úÉú0-4Ö®¼äµÄËæ»úÕûÊı£¬×÷Îª¼ÆËã»úËæ»úÑ¡ÔñµÄÓÎÏ·¶ÔÏó£¬´æÈë±äÁ¿comp_number
-    comp_choice=number_to_name(comp_number)# µ÷ÓÃnumber_to_name()º¯Êı½«¼ÆËã»ú²úÉúµÄËæ»úÊı×ª»»Îª¶ÔÓ¦µÄÓÎÏ·¶ÔÏó
-
-    print("¼ÆËã»úµÄÑ¡ÔñÎª£º%s"%comp_choice)# ÔÚÆÁÄ»ÉÏÏÔÊ¾¼ÆËã»úÑ¡ÔñµÄËæ»ú¶ÔÏó
-
+    print("--------")# è¾“å‡º"-------- "è¿›è¡Œåˆ†å‰²
+    player_choice=choice_name
+    player_choice_number=name_to_number(player_choice)
+    comp_number=random.randrange(0,5)
+    comp_choice=number_to_name(comp_number)
+    print("è®¡ç®—æœºçš„é€‰æ‹©ä¸ºï¼š%s"%comp_choice)
     if comp_number==0:
         if player_choice_number==1 or player_choice_number==2:
-            print("ÄãÊäÁË£¡")
+            print("ä½ è¾“äº†ï¼")
         else:
-            print("ÄãÊäÁË£¡")
+            print("ä½ è¾“äº†ï¼")
     elif comp_number==1:
         if player_choice_number==3 or player_choice_number==2:
-            print("ÄãÓ®ÁË£¡")
+            print("ä½ èµ¢äº†ï¼")
         else:
-            print("ÄãÊäÁË£¡")
+            print("ä½ è¾“äº†ï¼")
     elif comp_number==2:
         if player_choice_number==4 or player_choice_number==3:
-            print("ÄãÓ®ÁË£¡")
+            print("ä½ èµ¢äº†ï¼")
         else:
-            print("ÄãÊäÁË£¡")   
+            print("ä½ è¾“äº†ï¼")   
     elif comp_number==3:
         if player_choice_number==4 or player_choice_number==0:
-            print("ÄãÓ®ÁË£¡")
+            print("ä½ èµ¢äº†ï¼")
         else:
-            print("ÄãÊäÁË£¡")
+            print("ä½ è¾“äº†ï¼")
     elif comp_number==4:
         if player_choice_number==1 or player_choice_number==0:
-            print("ÄãÓ®ÁË£¡")
+            print("ä½ èµ¢äº†ï¼")
         else:
-            print("ÄãÊäÁË£¡")
-
-     #¸ù¾İÒÔÉÏÌáÊ¾±àĞ´Ö´ĞĞ´úÂë£¬´úÂëÍê³ÉºóÉ¾³ıµôpass
-
-
-# ¶Ô³ÌĞò½øĞĞ²âÊÔ
-print("»¶Ó­Ê¹ÓÃRPSLSÓÎÏ·")
+            print("ä½ è¾“äº†ï¼")
+print("æ¬¢è¿ä½¿ç”¨RPSLSæ¸¸æˆ")
 print("----------------")
-print("ÇëÊäÈëÄúµÄÑ¡Ôñ:")
+print("è¯·è¾“å…¥æ‚¨çš„é€‰æ‹©:")
 choice_name=input()
 rpsls(choice_name)
 
